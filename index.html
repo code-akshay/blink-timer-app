@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,17 +56,41 @@
     }
 
     /* Screenshots */
+    /* Screenshots horizontal scroll */
+    .screens-wrapper {
+      overflow-x: auto;
+      padding: 20px 0;
+    }
+
     .screens {
-      display: grid;
-      gap: 40px;
+      display: flex;
+      gap: 30px;
+      width: max-content;
+      margin: auto;
+      padding: 10px 20px;
     }
 
     .screens img {
-      width: 100%;
-      max-width: 850px;
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      height: 520px;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      flex-shrink: 0;
+      transition: transform 0.3s;
     }
+
+    .screens img:hover {
+      transform: scale(1.04);
+    }
+
+    /* smooth mobile scroll */
+    .screens-wrapper {
+      scroll-snap-type: x mandatory;
+    }
+
+    .screens img {
+      scroll-snap-align: center;
+    }
+
 
     /* Features */
     .features {
@@ -109,16 +134,20 @@
 
 
   <!-- SCREENSHOTS -->
+  <!-- SCREENSHOTS -->
   <section>
     <h2>Take Break. Relax. Recharge.</h2>
 
-    <div class="screens">
-      <img src="screens/shot1.png" alt="Break timer screen" />
-      <img src="screens/shot2.png" alt="Notification preview" />
-      <img src="screens/shot3.png" alt="Settings screen" />
-      <img src="screens/shot4.png" alt="Sign in with Apple" />
+    <div class="screens-wrapper">
+      <div class="screens">
+        <img src="screens/shot1.png" alt="">
+        <img src="screens/shot2.png" alt="">
+        <img src="screens/shot3.png" alt="">
+        <img src="screens/shot4.png" alt="">
+      </div>
     </div>
   </section>
+
 
 
   <!-- FEATURES -->
@@ -142,7 +171,7 @@
     <p>
       Questions or feedback?<br />
       Email us at
-      <a href="mailto:support@deskbreak.app">support@deskbreak.app</a>
+      <a href="mailto:akshaygawade2711@gmail.com">support@deskbreak.app</a>
     </p>
   </section>
 
@@ -152,4 +181,5 @@
   </footer>
 
 </body>
+
 </html>
